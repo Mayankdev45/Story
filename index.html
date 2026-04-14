@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mythos — Illustrated Story Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">My<span class="logo-accent">th</span>os</div>
+    <div class="header-pill">Illustrated Story Creator</div>
+  </header>
+
+  <!-- FORGE (input form) -->
+  <section class="forge" id="forgeSection">
+    <div class="forge-inner">
+      <h1 class="forge-heading">
+        Stories with<br /><em>scenes that breathe.</em>
+      </h1>
+      <p class="forge-sub">
+        Pick your world, name your hero — Claude writes your story in scenes,
+        each paired with its own AI illustration.
+      </p>
+
+      <!-- Row 1 -->
+      <div class="ctrl-grid three">
+        <div class="ctrl">
+          <div class="ctrl-label">Genre</div>
+          <select id="genre">
+            <option value="fantasy">Fantasy</option>
+            <option value="science fiction">Sci-Fi</option>
+            <option value="mystery">Mystery</option>
+            <option value="horror">Horror</option>
+            <option value="Indian mythology">Indian Mythology</option>
+            <option value="adventure">Adventure</option>
+            <option value="romance">Romance</option>
+            <option value="historical fiction">Historical Fiction</option>
+            <option value="thriller">Thriller</option>
+          </select>
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-label">Setting</div>
+          <select id="setting">
+            <option value="an ancient Indian kingdom">Ancient Indian Kingdom</option>
+            <option value="a futuristic Mumbai">Futuristic Mumbai</option>
+            <option value="a haunted Rajasthani fort">Haunted Rajasthani Fort</option>
+            <option value="outer space">Outer Space</option>
+            <option value="the snow-capped Himalayas">The Himalayas</option>
+            <option value="a dense magical jungle">Magical Jungle</option>
+            <option value="a royal Mughal court">Mughal Royal Court</option>
+            <option value="a cyberpunk Delhi">Cyberpunk Delhi</option>
+            <option value="a coastal Kerala village">Kerala Village</option>
+            <option value="an underground lost city">Underground Lost City</option>
+          </select>
+        </div>
+        <div class="ctrl no-border-right">
+          <div class="ctrl-label">Hero's name</div>
+          <input type="text" id="hero" placeholder="e.g. Arjun, Priya…" value="Arjun" maxlength="30" />
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="ctrl-grid two">
+        <div class="ctrl">
+          <div class="ctrl-label">Hero's quality</div>
+          <select id="trait">
+            <option value="brave and fearless">Brave &amp; Fearless</option>
+            <option value="cunning and wise">Cunning &amp; Wise</option>
+            <option value="kind and selfless">Kind &amp; Selfless</option>
+            <option value="mysterious and powerful">Mysterious &amp; Powerful</option>
+            <option value="reckless and bold">Reckless &amp; Bold</option>
+            <option value="haunted by the past">Haunted by the Past</option>
+            <option value="gifted with ancient magic">Gifted with Magic</option>
+          </select>
+        </div>
+        <div class="ctrl no-border-right">
+          <div class="ctrl-label">Number of scenes</div>
+          <select id="numScenes">
+            <option value="3">3 scenes — short story</option>
+            <option value="4" selected>4 scenes — perfect tale</option>
+            <option value="5">5 scenes — epic journey</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Generate button -->
+      <button class="gen-btn" id="genBtn">
+        <span class="btn-spinner" id="btnSpinner"></span>
+        <span class="btn-text" id="btnText">Generate my story &rarr;</span>
+      </button>
+
+      <!-- Error message -->
+      <div class="error-box" id="errorBox"></div>
+    </div>
+  </section>
+
+  <!-- LOADING BAR -->
+  <div class="loading-bar" id="loadingBar">
+    <div class="loading-fill" id="loadingFill"></div>
+  </div>
+  <div class="loading-msg" id="loadingMsg"></div>
+
+  <!-- STORY PAGE -->
+  <section class="story-page" id="storyPage">
+
+    <!-- Story header -->
+    <div class="story-header">
+      <div class="story-genre-tag" id="storyGenreTag"></div>
+      <h1 class="story-main-title" id="storyMainTitle"></h1>
+      <p class="story-byline" id="storyByline"></p>
+    </div>
+
+    <!-- Scenes are injected here -->
+    <div id="scenesContainer"></div>
+
+    <!-- End card -->
+    <div class="story-end" id="storyEnd">
+      <span class="end-ornament">&#10022;</span>
+      <p class="end-caption">The end of this tale — but never of stories.</p>
+      <div class="end-actions">
+        <button class="end-btn primary" id="newStoryBtn">Write a new story</button>
+        <button class="end-btn" id="copyBtn">Copy full story</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-quote">"Every scene deserves to be seen."</span>
+    <span class="footer-tag">Mythos &middot; AI Exhibition Project</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
