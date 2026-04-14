@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
 // ── POST /api/story ─────────────────────────
 app.post("/api/story", async (req, res) => {
