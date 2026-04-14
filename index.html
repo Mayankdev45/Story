@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mythos — Illustrated Story Creator</title>
+  <title>Mythos — Story Creator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap"
@@ -19,7 +19,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">My<span class="logo-accent">th</span>os</div>
-    <div class="header-pill">Illustrated Story Creator</div>
+    <div class="header-pill">Created by Mayank Dev</div>
   </header>
 
   <!-- FORGE (input form) -->
@@ -38,6 +38,7 @@
         <div class="ctrl">
           <div class="ctrl-label">Genre</div>
           <select id="genre">
+            <option value="select">Select</option>
             <option value="fantasy">Fantasy</option>
             <option value="science fiction">Sci-Fi</option>
             <option value="mystery">Mystery</option>
@@ -52,6 +53,7 @@
         <div class="ctrl">
           <div class="ctrl-label">Setting</div>
           <select id="setting">
+            <option value="select">Select</option>
             <option value="an ancient Indian kingdom">Ancient Indian Kingdom</option>
             <option value="a futuristic Mumbai">Futuristic Mumbai</option>
             <option value="a haunted Rajasthani fort">Haunted Rajasthani Fort</option>
@@ -66,7 +68,7 @@
         </div>
         <div class="ctrl no-border-right">
           <div class="ctrl-label">Hero's name</div>
-          <input type="text" id="hero" placeholder="e.g. Arjun, Priya…" value="Arjun" maxlength="30" />
+          <input type="text" id="hero" placeholder="Enter Name" value="" maxlength="30" />
         </div>
       </div>
 
@@ -75,6 +77,7 @@
         <div class="ctrl">
           <div class="ctrl-label">Hero's quality</div>
           <select id="trait">
+            <option value="select">Select</option>
             <option value="brave and fearless">Brave &amp; Fearless</option>
             <option value="cunning and wise">Cunning &amp; Wise</option>
             <option value="kind and selfless">Kind &amp; Selfless</option>
@@ -87,6 +90,7 @@
         <div class="ctrl no-border-right">
           <div class="ctrl-label">Number of scenes</div>
           <select id="numScenes">
+            <option value="0">Select</option>
             <option value="3">3 scenes — short story</option>
             <option value="4" selected>4 scenes — perfect tale</option>
             <option value="5">5 scenes — epic journey</option>
@@ -139,7 +143,7 @@
   <!-- FOOTER -->
   <footer>
     <span class="footer-quote">"Every scene deserves to be seen."</span>
-    <span class="footer-tag">Mythos &middot; AI Exhibition Project</span>
+    <span class="footer-tag">Mythos &middot; Story Generator</span>
   </footer>
 
   <script src="script.js"></script>
